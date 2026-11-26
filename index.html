@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YSSE Neural Portal | Advanced Course Matrix</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="smooth-cursor" id="smoothCursor">
+    <div class="cursor-arrow"></div>
+    <div class="cursor-ping"></div>
+  </div>
+
+  <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="header-top-row">
+        <a href="index.html" class="brand-badge interactive">
+          <i class="fa-solid fa-terminal"></i> YSSE IT &bull; Web Dev Wing
+        </a>
+        <div class="header-actions">
+          <a href="dashboard.html" class="nav-link-btn interactive" title="Telemetry Dashboard">
+            <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
+          </a>
+          <button id="themeToggleBtn" class="icon-btn interactive" title="Toggle Spectrum Mode">
+            <i class="fa-solid fa-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </div>
+      <div class="hero-text-block">
+        <h1>Neural Course Matrix $v5.2$</h1>
+        <p>Enterprise-grade technical curriculum matrix engineered for high-performance engineering squads.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container portal-workspace">
+    
+    <section class="control-panel glass-panel" aria-label="Course Controls">
+      <div class="search-row">
+        <div class="control-group search-group">
+          <label for="searchInput"><i class="fa-solid fa-magnifying-glass"></i> Deep Query Engine</label>
+          <div class="input-wrapper">
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Search title, keyword, tech stack (e.g., Python, React)..." 
+              autocomplete="off"
+            >
+            <button id="clearSearchBtn" class="clear-input-btn hidden interactive"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label for="sortSelect"><i class="fa-solid fa-arrow-up-wide-short"></i> Matrix Sequence</label>
+          <select id="sortSelect" class="interactive">
+            <option value="default">Default Priority</option>
+            <option value="title-asc">Alphabetical (A - Z)</option>
+            <option value="title-desc">Alphabetical (Z - A)</option>
+            <option value="duration">Duration (Shortest)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="filters-row">
+        <div class="control-group">
+          <label for="categoryFilter"><i class="fa-solid fa-layer-group"></i> Domain Category</label>
+          <select id="categoryFilter" class="interactive">
+            <option value="All">All Domains</option>
+            <option value="Web Development">Web Development</option>
+            <option value="Programming">Programming</option>
+            <option value="Graphic Design">Graphic Design</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Data Science">Data Science</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="levelFilter"><i class="fa-solid fa-signal"></i> Difficulty Tier</label>
+          <select id="levelFilter" class="interactive">
+            <option value="All">All Tiers</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <div class="control-group action-buttons">
+          <button id="favoritesFilterBtn" class="btn btn-secondary interactive" type="button">
+            <i class="fa-solid fa-bookmark"></i> Bookmarks (<span id="favCount">0</span>)
+          </button>
+          <button id="resetBtn" class="btn btn-odd-accent interactive" type="button">
+            <i class="fa-solid fa-rotate-right"></i> Purge Filters
+          </button>
+        </div>
+      </div>
+
+      <div class="meta-bar">
+        <div class="results-info">
+          Active Systems: <span id="courseCount" class="highlight-num">0</span> matching nodes
+        </div>
+        <div class="view-switchers">
+          <button id="gridViewBtn" class="view-btn active interactive" title="Grid View"><i class="fa-solid fa-grip"></i></button>
+          <button id="listViewBtn" class="view-btn interactive" title="List View"><i class="fa-solid fa-list"></i></button>
+        </div>
+      </div>
+      <div class="active-pills-container" id="activePillsContainer"></div>
+    </section>
+
+    <section class="course-section">
+      <div id="courseContainer" class="course-grid"></div>
+      
+      <div id="noResults" class="no-results glass-panel hidden">
+        <div class="no-results-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+        <h3>Zero Matching Nodes Detected</h3>
+        <p>No active courses satisfy your precise query parameters. Re-configure your filters or purge search inputs.</p>
+        <button id="emptyResetBtn" class="btn btn-odd-accent interactive">Reset Parameters</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YSSE &bull; Youth School for Social Entrepreneurs &bull; IT Wing</p>
+      <div class="footer-meta"><span class="code-font">SECURE_MATRIX_CONNECTED</span></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

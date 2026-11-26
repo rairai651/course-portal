@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YSSE Neural Portal | Course Spec</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="smooth-cursor" id="smoothCursor">
+    <div class="cursor-arrow"></div>
+    <div class="cursor-ping"></div>
+  </div>
+
+  <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+  <div class="glow-sphere glow-1"></div>
+  <div class="glow-sphere glow-2"></div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Enrollment Form Pop-Up Modal -->
+  <div class="modal-backdrop hidden" id="enrollModal">
+    <div class="modal-content glass-panel">
+      <button class="modal-close-btn interactive" id="modalCloseBtn" type="button"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header-title">
+        <h3><i class="fa-solid fa-rocket"></i> Enrollment Authorization Form</h3>
+        <p>Enter your student details to complete registration.</p>
+      </div>
+      <form id="enrollForm" class="enroll-form">
+        <div class="control-group">
+          <label for="studentName"><i class="fa-solid fa-user"></i> Full Name</label>
+          <input type="text" id="studentName" placeholder="e.g. Raisha Afroz" required autocomplete="off">
+        </div>
+        <div class="control-group">
+          <label for="studentEmail"><i class="fa-solid fa-envelope"></i> Student Email ID</label>
+          <input type="email" id="studentEmail" placeholder="student@ysse.edu.bd" required autocomplete="off">
+        </div>
+        <div class="control-group">
+          <label for="studentWing"><i class="fa-solid fa-code"></i> Department / Wing</label>
+          <select id="studentWing" class="interactive">
+            <option value="Web Development">Web Development & CMS Wing</option>
+            <option value="Programming">Software Engineering Wing</option>
+            <option value="Data Science">Data Science & AI Wing</option>
+            <option value="Graphic Design">Creative Design Wing</option>
+          </select>
+        </div>
+        <div class="modal-actions" style="margin-top: 15px;">
+          <button type="submit" class="btn btn-odd-accent interactive" style="width: 100%;">
+            <i class="fa-solid fa-check"></i> Authorize & Complete Enrollment
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="header-top-row">
+        <a href="index.html" class="brand-badge interactive back-btn">
+          <i class="fa-solid fa-arrow-left"></i> Return to Matrix
+        </a>
+        <div class="header-actions">
+          <a href="dashboard.html" class="nav-link-btn interactive"><i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span></a>
+          <button id="themeToggleBtn" class="icon-btn interactive"><i class="fa-solid fa-moon" id="themeIcon"></i></button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container detail-workspace">
+    <div class="detail-card glass-panel" id="detailContainer">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        <p>Loading course specification...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YSSE &bull; Youth School for Social Entrepreneurs &bull; IT Wing</p>
+      <div class="footer-meta"><span class="code-font">NODE_SPEC_VERIFIED</span></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

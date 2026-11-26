@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YSSE Neural Portal | Telemetry Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="smooth-cursor" id="smoothCursor">
+    <div class="cursor-arrow"></div>
+    <div class="cursor-ping"></div>
+  </div>
+
+  <canvas id="neuralCanvas" class="neural-canvas"></canvas>
+  <div class="glow-sphere glow-1"></div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <header class="main-header">
+    <div class="container header-container">
+      <div class="header-top-row">
+        <a href="index.html" class="brand-badge interactive back-btn">
+          <i class="fa-solid fa-arrow-left"></i> Return to Matrix
+        </a>
+        <div class="header-actions">
+          <button id="themeToggleBtn" class="icon-btn interactive"><i class="fa-solid fa-moon" id="themeIcon"></i></button>
+        </div>
+      </div>
+      <div class="hero-text-block">
+        <h1>Telemetry & User Dashboard</h1>
+        <p>Monitor your active bookmarked nodes, enrolled curriculums, and progression telemetry.</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container portal-workspace">
+    
+    <div class="stats-grid">
+      <div class="stat-card glass-panel">
+        <div class="stat-icon"><i class="fa-solid fa-bookmark"></i></div>
+        <div class="stat-info">
+          <h3 id="dashFavCount">0</h3>
+          <p>Bookmarked Nodes</p>
+        </div>
+      </div>
+      <div class="stat-card glass-panel stat-odd-accent">
+        <div class="stat-icon"><i class="fa-solid fa-rocket"></i></div>
+        <div class="stat-info">
+          <h3 id="dashEnrollCount">0</h3>
+          <p>Active Enrollments</p>
+        </div>
+      </div>
+      <div class="stat-card glass-panel">
+        <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <div class="stat-info">
+          <h3>100%</h3>
+          <p>Matrix Integrity</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Active Enrollments Section with Cancellation -->
+    <section class="course-section" style="margin-top: 35px;">
+      <h2 class="section-title"><i class="fa-solid fa-rocket"></i> Active Enrollments & Progression</h2>
+      <div id="dashEnrollmentsContainer" class="course-grid"></div>
+      
+      <div id="dashNoEnrollments" class="no-results glass-panel hidden">
+        <div class="no-results-icon"><i class="fa-solid fa-rocket"></i></div>
+        <h3>No Active Enrollments</h3>
+        <p>Explore individual course specifications and initiate enrollment protocols.</p>
+        <a href="index.html" class="btn btn-odd-accent interactive">Explore Matrix</a>
+      </div>
+    </section>
+
+    <!-- Bookmarked Nodes Section -->
+    <section class="course-section" style="margin-top: 45px;">
+      <h2 class="section-title"><i class="fa-solid fa-star"></i> Saved Node Curriculums</h2>
+      <div id="dashBookmarksContainer" class="course-grid"></div>
+      
+      <div id="dashNoBookmarks" class="no-results glass-panel hidden">
+        <div class="no-results-icon"><i class="fa-solid fa-bookmark"></i></div>
+        <h3>No Saved Nodes Detected</h3>
+        <p>Bookmark course nodes from the hub to track them here.</p>
+        <a href="index.html" class="btn btn-primary interactive">Explore Matrix</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="main-footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 YSSE &bull; Youth School for Social Entrepreneurs &bull; IT Wing</p>
+      <div class="footer-meta"><span class="code-font">TELEMETRY_STREAM_ACTIVE</span></div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
